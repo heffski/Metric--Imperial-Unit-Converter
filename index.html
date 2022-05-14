@@ -1,22 +1,61 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     </head>
     <body>
-        <div>
-            <h1>Metric/Imperial Unit Conversion</h1>
-            <div class="flex jcc"><input id="main" placeholder="0.0" maxlength="8"></input></div>
-        </div>
-        <div class="flex col">
-            <div class="flex jcc"><h4>Length (Meter/Feet)</h4></div>
-            <div class="flex row aic">
-                    <p class="out">0</p><p class="pr5">meters =</p>
-                    <p class="f-m">0.000</p><p>feet</p>
-
-                    <p class="pl5 pr5">|</p>
-
-                    <p class="out">0</p><p class="pr5">feet =</p>
-                    <p class="m-f">0.000</p><p>meters</p>
+        <div class="container">
+            <div class="input-container flex col aic">
+                <h1>Metric/Imperial Unit Conversion</h1>
+                <div class="flex jcc">
+                    <input 
+                        id="main" 
+                        class="input"
+                        placeholder="0.0" 
+                        onkeyup="userFills(), conversions()" 
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+                        maxlength="8" 
+                        type="number" >
+                    </input>
+                </div>
+            </div>
+            <div class="flex col boxes">
+                <div class="flex jcc m-"><h4>Length (Meter/Feet)</h4></div>
+                <div class="flex jcc">
+                        <p class="out pr5">0</p><p class="pr5">meters =</p>
+                        <p id="m-f" class="pr5">0.000</p><p>feet</p>
+    
+                        <p class="pl5 pr5">|</p>
+    
+                        <p class="out pr5">0</p><p class="pr5">feet =</p>
+                        <p id="f-m" class="pr5">0.000</p><p>meters</p>
+                </div>
+            </div>
+            <div class="flex col boxes">
+                <div class="flex jcc m-"><h4>Volume (Liters/Gallons)</h4></div>
+                <div class="flex jcc">
+                        <p class="out pr5">0</p><p class="pr5">liters =</p>
+                        <p id="l-g" class="pr5">0.000</p><p>gallons</p>
+    
+                        <p class="pl5 pr5">|</p>
+    
+                        <p class="out pr5">0</p><p class="pr5">gallons =</p>
+                        <p id="g-l" class="pr5">0.000</p><p>liters</p>
+                </div>
+            </div>
+            <div class="flex col boxes mb20">
+                <div class="flex jcc m-"><h4>Mass (Kilograms/Pounds)</h4></div>
+                <div class="flex jcc">
+                        <p class="out pr5">0</p><p class="pr5">kilos =</p>
+                        <p id="k-p" class="pr5">0.000</p><p>pounds</p>
+    
+                        <p class="pl5 pr5">|</p>
+    
+                        <p class="out pr5">0</p><p class="pr5">pounds =</p>
+                        <p id="p-k" class="pr5">0.000</p><p>kilos</p>
+                </div>
             </div>
         </div>
     
